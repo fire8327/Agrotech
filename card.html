@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>КАРТОЧКА</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="Assets/CSS/custom.css">
+    <style type="text/tailwindcss">
+        .container {
+            @apply max-[1920px]:max-w-[1180px];
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <div class="container mx-auto py-4">
+            <div class="flex justify-between">
+                <a href="index.html" class="flex items-center">
+                    <img src="Assets/Images/icon/Logo.svg" class="w-40 xl:w-64" alt="Тракторы Агромаш" />
+                </a>
+                <div class="hidden lg:flex flex-col gap-1">
+                    <p class="text-sm text-[#949494] ">Бесплатно по России</p>
+
+                    <div class="flex justify-center gap-3">
+                        <img src="Assets/Images/icon/telefon.svg" alt="">
+                        <a href="tel:8-800-600-09-08" class="">8-800-600-09-08</a>
+                    </div>
+
+                </div>
+                <div class="hidden lg:flex flex-col gap-1">
+                    <p class="text-sm text-[#949494] ">Отдел продаж</p>
+
+                    <div class="flex justify-center gap-3">
+                        <img src="Assets/Images/icon/telefon.svg" alt="">
+                        <a href="tel:+7 (903) 064-35-35" class="">+7 (903) 064-35-35</a>
+                    </div>
+                    <div class="flex justify-center gap-3">
+                        <img src="Assets/Images/icon/telefon.svg" alt="">
+                        <a href="tel:+7 (903) 064-33-88" class="">+7 (903) 064-33-88</a>
+                    </div>
+                </div>
+                <div class="hidden lg:flex flex-col gap-1">
+                    <p class="text-sm text-[#949494] ">Электронная почта</p>
+
+                    <div class="flex justify-center gap-3">
+                        <img src="Assets/Images/icon/email.svg" alt="">
+                        <a href="mailto:agromash-21@yandex.ru" class="">agromash-21@yandex.ru</a>
+                    </div>
+
+                </div>
+                <button class="bg-[#FF4616] px-5 py-3 rounded-lg self-center hidden lg:block">
+                    <p class="text-white text-sm">СВЯЗАТЬСЯ С НАМИ</p>
+                </button>
+                <div class="flex items-center gap-6 md:gap-12 lg:hidden">
+                    <button type="button" class="flex items-center justify-center lg:hidden">
+                        <img src="Assets/Images/icon/telefon.svg" alt="">
+                    </button>
+                    <button type="button" class="flex items-center justify-center lg:hidden" id="toggler">
+                        <img src="Assets/Images/icon/menu.svg" class="delay-100 transition-all duration-500" alt="" id="menu">
+                        <img src="Assets/Images/icon/close.svg" class="delay-100 transition-all duration-500 hidden" alt="" id="menu2">
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-[#009FD9] w-full hidden lg:flex">
+            <div class="container mx-auto flex justify-between xl:gap-10 lg:gap-5 py-5 font-[500] lg:text-sm xl:text-base pr-[140px]">
+                <a href="" class="text-white">АГРОМАШ 90ТГ</a>
+                <a href="" class="text-white">АГРОМАШ 90ТК</a>
+                <a href="" class="text-white">АГРОМАШ 75ТК</a>
+                <a href="" class="text-white">АГРОМАШ 90ТКС</a>
+                <a href="" class="text-white">АГРОМАШ 75ТКС</a>
+                <a href="" class="text-white">О компании</a>
+                <a href="" class="text-white">Контакты</a>
+            </div>
+        </div>
+
+        <div class="w-full flex">
+            <div id="mobilenav" class="bg-white fixed top-auto right-0 flex flex-col w-full lg:hidden transform translate-x-full transition duration-300 ease-in-out z-30 pb-10">
+                <div class="container mx-auto flex flex-col gap-4 mt-2.5">
+                    <a href="">АГРОМАШ 90ТГ</a>
+                    <a href="">АГРОМАШ 90ТК</a>
+                    <a href="">АГРОМАШ 75ТК</a>
+                    <a href="">АГРОМАШ 90ТКС</a>
+                    <a href="">АГРОМАШ 75ТКС</a>
+                    <a href="">О компании</a>
+                    <a href="">Контакты</a>
+                    <p>
+                        <span>Бесплатно по России: </span>
+                        <a href="tel:8-800-600-09-08">8-800-600-09-08</a>
+                    </p>
+                    <p>
+                        <span>Отдел продаж: </span>
+                        <a href="tel:+7 (903) 064-35-35">+7 (903) 064-35-35</a>
+                        <span> / </span>
+                        <a href="tel:+7 (903) 064-33-88">+7 (903) 064-33-88</a>
+                    </p>
+                    <p>
+                        <span>Электронная почта: </span>
+                        <a href="mailto:agromash-21@yandex.ru">agromash-21@yandex.ru</a>
+                    </p>
+                    <button class="w-full bg-[#FF4616] text-white py-3 mt-2.5 uppercase rounded-[10px] text-sm">
+                        связаться с нами
+                    </button>
+                </div>
+            </div>
+            <div class="w-full h-screen mt-auto fixed top-auto right-0 hidden z-10 bg-gray-900 opacity-70" id="overlay"></div>
+        </div>
+    </header>
+
+    <!-- Главная -->
+    <div class="container mx-auto flex flex-col lg:mt-16 md:mt-10 mt-2">
+        <p class="font-bold md:text-[40px] text-[30px] lg:mb-6 md:mb-10 mb-2">Трактор АГРОМАШ-90ТГ</p>
+        <div class="flex lg:flex-row flex-col gap-10">
+            <div class="flex justify-center lg:w-1/2 w-full">
+                <img src="Assets/Images/pageCard/main.png" alt="">
+            </div>
+            <div class="flex flex-col lg:w-1/2 w-full lg:gap-10 md:gap-7 gap-5 md:text-lg text-sm">
+                <p>Универсальный колесный трактор тягового класса 1,4 с колесной формулой 4х4. В агрегате с навесным и прицепным 
+                    оборудованием предназначен для выполнения комплекса работ в растениеводстве и животноводстве, а также 
+                    погрузочно-разгрузочных, транспортных, уборочных работ в дорожной, строительной и коммунальной сфере.
+                </p>
+                <ul class="list-disc list-inside marker:text-[#FF4616] marker:w-5 marker:h-5">
+                    <li>Оптимальное соотношение габаритных размеров</li>
+                    <li>Небольшая высота трактора позволяет использовать его в стесненных условиях.</li>
+                    <li>Эксплуатационная масса трактора позволяет получить высокие тяговые характеристики.</li>
+                </ul>
+                <div class="flex md:flex-row flex-col gap-2">
+                    <a href="#" class="w-full flex justify-center items-center md:py-5 py-4 text-sm font-bold bg-transparent rounded-lg border-2 border-[#FF4616] hover:bg-[#FF4616] hover:text-white text-[#FF4616] transition-all duration-500 delay-100">КУПИТЬ В ЛИЗИНГ</a>
+                    <a href="#" class="w-full flex justify-center items-center md:py-5 py-4 text-sm font-bold bg-[#FF4616] rounded-lg border-2 hover:border-2 border-[#FF4616] hover:border-[#FF4616] hover:bg-transparent hover:text-[#FF4616] text-white transition-all duration-500 delay-100">ОСТАВИТЬ ЗАЯВКУ</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Табы -->
+    <div class="container mx-auto xl:my-[120px] lg:my-[100px] my-20">
+        <ul
+        class="flex bg-[#D6F4FF] overflow-scroll md:overflow-hidden divide-x divide-[#009FD9] md:py-4 py-[14px] rounded-lg md:text-lg text-sm font-bold items-center text-black"
+        role="tablist"
+        data-te-nav-ref>
+        <li role="presentation" class="flex text-center lg:px-6 md:px-4 px-5 lg:w-fit lg:min-w-[100px] w-[170px]">
+          <a
+            href="#property"
+            class="w-full data-[te-nav-active]:text-[#FF4616]"
+            data-te-toggle="pill"
+            data-te-target="#property"
+            data-te-nav-active
+            role="tab"
+            aria-controls="property"
+            aria-selected="true"
+            >Характеристики</a
+          >
+        </li>
+        <li role="presentation" class="flex text-center lg:px-6 md:px-4 px-5 lg:w-fit lg:min-w-[100px] w-[127px]">
+          <a
+            href="#HowToBuy"
+            class="w-full data-[te-nav-active]:text-[#FF4616] whitespace-nowrap"
+            data-te-toggle="pill"
+            data-te-target="#HowToBuy"
+            role="tab"
+            aria-controls="HowToBuy"
+            aria-selected="false"
+            >Как купить</a
+          >
+        </li>
+        <li role="presentation" class="flex text-center lg:px-6 md:px-4 px-5 lg:w-fit lg:min-w-[100px] w-[114px]">
+          <a
+            href="#delivery"
+            class="w-full data-[te-nav-active]:text-[#FF4616]"
+            data-te-toggle="pill"
+            data-te-target="#delivery"
+            role="tab"
+            aria-controls="delivery"
+            aria-selected="false"
+            >Доставка</a
+          >
+        </li>
+        <li role="presentation" class="flex text-center lg:px-6 md:px-4 px-5 lg:w-fit lg:min-w-[100px] w-[93px]">
+          <a
+            href="#payment"
+            class="w-full data-[te-nav-active]:text-[#FF4616]"
+            data-te-toggle="pill"
+            data-te-target="#payment"
+            role="tab"
+            aria-controls="payment"
+            aria-selected="false"
+            >Оплата</a
+          >
+        </li>
+        <li role="presentation" class="flex text-center lg:px-6 md:px-4 px-5 lg:w-fit lg:min-w-[100px] w-[76px]">
+          <a
+            href="#photo"
+            class="w-full data-[te-nav-active]:text-[#FF4616]"
+            data-te-toggle="pill"
+            data-te-target="#photo"
+            role="tab"
+            aria-controls="photo"
+            aria-selected="false"
+            >Фото</a
+          >
+        </li>
+        <li role="presentation" class="flex text-center lg:px-6 md:px-4 px-5 lg:w-fit lg:min-w-[100px] w-[84px]">
+          <a
+            href="#video"
+            class="w-full data-[te-nav-active]:text-[#FF4616]"
+            data-te-toggle="pill"
+            data-te-target="#video"
+            role="tab"
+            aria-controls="video"
+            aria-selected="false"
+            >Видео</a
+          >
+        </li>
+      </ul>
+      <div>
+        <div
+            class="hidden opacity-0 opacity-100 transition-opacity duration-150 ease-linear data-[te-tab-active]:block"
+            id="property"
+            role="tabpanel"
+            aria-labelledby="property"
+            data-te-tab-active>
+            <div class="flex flex-col gap-10 mt-10">
+                <div class="flex flex-col">
+                    <p class="font-bold text-2xl mb-4">Двигатель</p> 
+                    <ul class="md:text-base text-sm">
+                        <li class="flex gap-8 items-center odd:bg-[#F2F2F2] even:bg-white p-[10px]">
+                            <div class="w-1/2">Тип</div>
+                            <div class="w-1/2">4-х цилиндровый с турбо-наддувом</div>
+                        </li>
+                        <li class="flex gap-8 items-center odd:bg-[#F2F2F2] even:bg-white p-[10px]">
+                            <div class="w-1/2">Мощность, л.с.</div>
+                            <div class="w-1/2">90</div>
+                        </li>
+                        <li class="flex gap-8 items-center odd:bg-[#F2F2F2] even:bg-white p-[10px]">
+                            <div class="w-1/2">Количество цилиндров</div>
+                            <div class="w-1/2">4</div>
+                        </li>
+                        <li class="flex gap-8 items-center odd:bg-[#F2F2F2] even:bg-white p-[10px]">
+                            <div class="w-1/2">Объем, см3</div>
+                            <div class="w-1/2">4087</div>
+                        </li>
+                        <li class="flex gap-8 items-center odd:bg-[#F2F2F2] even:bg-white p-[10px]">
+                            <div class="w-1/2">Номинальные обороты</div>
+                            <div class="w-1/2">2200</div>
+                        </li>
+                        <li class="flex gap-8 items-center odd:bg-[#F2F2F2] even:bg-white p-[10px]">
+                            <div class="w-1/2">Система холодного пуска</div>
+                            <div class="w-1/2">Да</div>
+                        </li>
+                        <li class="flex gap-8 items-center odd:bg-[#F2F2F2] even:bg-white p-[10px]">
+                            <div class="w-1/2">Максимальный крутящий момент</div>
+                            <div class="w-1/2">360 Нм при 1300 об/мин</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex flex-col">
+                    <p class="font-bold text-2xl mb-4">Трансмиссия</p> 
+                    <ul class="md:text-base text-sm">
+                        <li class="flex gap-8 items-center odd:bg-[#F2F2F2] even:bg-white p-[10px]">
+                            <div class="w-1/2">Тип</div>
+                            <div class="w-1/2">Синхронизированная механическая</div>
+                        </li>
+                        <li class="flex gap-8 items-center odd:bg-[#F2F2F2] even:bg-white p-[10px]">
+                            <div class="w-1/2">Привод</div>
+                            <div class="w-1/2">Полный привод 4WD</div>
+                        </li>
+                        <li class="flex gap-8 items-center odd:bg-[#F2F2F2] even:bg-white p-[10px]">
+                            <div class="w-1/2">Сцепление</div>
+                            <div class="w-1/2">Двухдисковое</div>
+                        </li>
+                        <li class="flex gap-8 items-center odd:bg-[#F2F2F2] even:bg-white p-[10px]">
+                            <div class="w-1/2">Коробка переключения передач</div>
+                            <div class="w-1/2">12 вперед + 12 назад</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex flex-col">
+                    <p class="font-bold text-2xl mb-4">Размеры и масса</p> 
+                    <ul class="md:text-base text-sm">
+                        <li class="flex gap-8 items-center odd:bg-[#F2F2F2] even:bg-white p-[10px]">
+                            <div class="w-1/2">Вес, кг</div>
+                            <div class="w-1/2">3517</div>
+                        </li>
+                        <li class="flex gap-8 items-center odd:bg-[#F2F2F2] even:bg-white p-[10px]">
+                            <div class="w-1/2">Колесная база, мм</div>
+                            <div class="w-1/2">2218</div>
+                        </li>
+                        <li class="flex gap-8 items-center odd:bg-[#F2F2F2] even:bg-white p-[10px]">
+                            <div class="w-1/2">Полная длина, мм</div>
+                            <div class="w-1/2">3980</div>
+                        </li>
+                        <li class="flex gap-8 items-center odd:bg-[#F2F2F2] even:bg-white p-[10px]">
+                            <div class="w-1/2">Полная ширина, мм</div>
+                            <div class="w-1/2">2400</div>
+                        </li>
+                        <li class="flex gap-8 items-center odd:bg-[#F2F2F2] even:bg-white p-[10px]">
+                            <div class="w-1/2">Высота, мм</div>
+                            <div class="w-1/2">2640</div>
+                        </li>
+                        <li class="flex gap-8 items-center odd:bg-[#F2F2F2] even:bg-white p-[10px]">
+                            <div class="w-1/2">Клиренс, мм</div>
+                            <div class="w-1/2">465</div>
+                        </li>
+                        <li class="flex gap-8 items-center odd:bg-[#F2F2F2] even:bg-white p-[10px]">
+                            <div class="w-1/2">Колея передняя, мм</div>
+                            <div class="w-1/2">1525-1940</div>
+                        </li>
+                        <li class="flex gap-8 items-center odd:bg-[#F2F2F2] even:bg-white p-[10px]">
+                            <div class="w-1/2">Колея задняя, мм</div>
+                            <div class="w-1/2">1450-1845</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex flex-col">
+                    <p class="font-bold text-2xl mb-4">Гидравлическая система</p> 
+                    <ul class="md:text-base text-sm">
+                        <li class="flex gap-8 items-center odd:bg-[#F2F2F2] even:bg-white p-[10px]">
+                            <div class="w-1/2">Трехточечная навеска</div>
+                            <div class="w-1/2">CAT-II</div>
+                        </li>
+                        <li class="flex gap-8 items-center odd:bg-[#F2F2F2] even:bg-white p-[10px]">
+                            <div class="w-1/2">Грузоподъемность навесного оборудования, кг</div>
+                            <div class="w-1/2">2500 / 3000 (опция)</div>
+                        </li>
+                        <li class="flex gap-8 items-center odd:bg-[#F2F2F2] even:bg-white p-[10px]">
+                            <div class="w-1/2">Дополнительные гидровыводы</div>
+                            <div class="w-1/2">2DA / 2SA</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex flex-col">
+                    <p class="font-bold text-2xl mb-4">Скорость (вперед)</p> 
+                    <ul class="md:text-base text-sm">
+                        <li class="flex gap-8 items-center odd:bg-[#F2F2F2] even:bg-white p-[10px]">
+                            <div class="w-1/2">Максимальная скорость, км/ч</div>
+                            <div class="w-1/2">32,47</div>
+                        </li>
+                        <li class="flex gap-8 items-center odd:bg-[#F2F2F2] even:bg-white p-[10px]">
+                            <div class="w-1/2">Минимальная скорость, км/ч</div>
+                            <div class="w-1/2">1,47</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex flex-col">
+                    <p class="font-bold text-2xl mb-4">Вал отбора мощности</p> 
+                    <ul class="md:text-base text-sm">
+                        <li class="flex gap-8 items-center odd:bg-[#F2F2F2] even:bg-white p-[10px]">
+                            <div class="w-1/2">Обороты</div>
+                            <div class="w-1/2">540 / 540Е</div>
+                        </li>
+                        <li class="flex gap-8 items-center odd:bg-[#F2F2F2] even:bg-white p-[10px]">
+                            <div class="w-1/2">Тип включения</div>
+                            <div class="w-1/2">Механический</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex flex-col">
+                    <p class="font-bold text-2xl mb-4">Рулевое управление</p> 
+                    <ul class="md:text-base text-sm">
+                        <li class="flex gap-8 items-center odd:bg-[#F2F2F2] even:bg-white p-[10px]">
+                            <div class="w-1/2">Тип</div>
+                            <div class="w-1/2">Гидроусилитель</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex flex-col">
+                    <p class="font-bold text-2xl mb-4">Прочее</p> 
+                    <ul class="md:text-base text-sm">
+                        <li class="flex gap-8 items-center odd:bg-[#F2F2F2] even:bg-white p-[10px]">
+                            <div class="w-1/2">Указатель топлива</div>
+                            <div class="w-1/2">Стандарт</div>
+                        </li>
+                        <li class="flex gap-8 items-center odd:bg-[#F2F2F2] even:bg-white p-[10px]">
+                            <div class="w-1/2">Кондиционер/отопитель кабины</div>
+                            <div class="w-1/2">Стандарт</div>
+                        </li>
+                        <li class="flex gap-8 items-center odd:bg-[#F2F2F2] even:bg-white p-[10px]">
+                            <div class="w-1/2">Передний буксирный крюк</div>
+                            <div class="w-1/2">Да, встроенный в передний балласт</div>
+                        </li>
+                        <li class="flex gap-8 items-center odd:bg-[#F2F2F2] even:bg-white p-[10px]">
+                            <div class="w-1/2">Контргрузы</div>
+                            <div class="w-1/2">Передние: 4 х 25 кг + 2 х 30 кг, задние: 34 кг на каждое колесо</div>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+        <div
+            class="hidden opacity-0 transition-opacity duration-150 ease-linear data-[te-tab-active]:block"
+            id="HowToBuy"
+            role="tabpanel"
+            aria-labelledby="HowToBuy">
+            <div class="mt-10">
+            Рыба
+            </div>
+        </div>
+        <div
+            class="hidden opacity-0 transition-opacity duration-150 ease-linear data-[te-tab-active]:block"
+            id="delivery"
+            role="tabpanel"
+            aria-labelledby="delivery">
+            <div class="flex flex-col mt-10">
+                <p class="font-bold text-2xl mb-2">Доставка</p>
+                <ul class="list-disc list-inside lg:text-lg md:text-base text-sm md:pl-3">
+                    <li>Стоимость. На услуге перегона техники наша организация не зарабатывает, стоимость складывается из расхода топлива, 
+                        оплата водителя – 3 р/км, суточные 350 рублей/сутки, при перегоне более суток гостиница и обратный билет.</li>
+                    <li>Водители. Находятся в штате и все имеют стаж работы в нашей организации от 5 лет и общий стаж от 20 лет. 
+                        После каждого перегона мы получаем отчет о средней скорости движения, и этот параметр регламентирован – 
+                        исключены перегоны с большой скоростью.</li>
+                    <li>Топливо. Заправляются исключительно по картам «Лукойл» и «Газпромнефть». После перегона получаем отчет по количеству и 
+                        марке заправленного топлива, заправкам и средней скорости движения.</li>
+                    <li>Гарантии. Вся перегоняемая техника страхуется ОСАГО и КАСКО на случай аварии. На время перегона мы несём 100 % 
+                        тветственность за доставляемую технику.</li>
+                </ul>
+            </div>
+        </div>
+        <div
+            class="hidden opacity-0 transition-opacity duration-150 ease-linear data-[te-tab-active]:block"
+            id="payment"
+            role="tabpanel"
+            aria-labelledby="payment">
+            <div class="flex flex-col gap-10 mt-10">
+                <div class="flex flex-col">
+                    <p class="font-bold text-2xl mb-2">Оплата</p>
+                    <p class="lg:text-lg md:text-base text-sm">Одним из наших основных правил является индивидуальный подход к каждому клиенту. Обсудив с нашим менеджером 
+                        интересующую Вас технику и/или ее комплектующие, мы составим договор поставки, в котором будут учтены 
+                        Ваши предпочтения относительно:
+                    </p>
+                    <ul class="list-disc list-inside lg:text-lg md:text-base text-sm md:pl-3">
+                        <li>стоимость техники и/или ее комплектующих и комплектации;</li>
+                        <li>этапы оплаты и поставки;</li>
+                        <li>форма оплаты;</li>
+                        <li>особые условия, например мы, имеем положительный опыт работы через тендерные площадки;</li>
+                    </ul>
+                </div>
+                <div class="flex flex-col">
+                    <p class="font-bold text-2xl mb-2">Формы оплаты:</p>
+                        <ul class="list-disc list-inside lg:text-lg md:text-base text-sm md:pl-3">
+                            <li>безналичный расчёт, мы плательщики НДС. - наличный расчёт;</li>
+                            <li>оплата физического лица банковским переводом в банках по счёту и договору;</li>
+                            <li>оплата банковской или кредитной картой на карту;</li>
+                            <li>оплата электронными деньгами: WebMoney, Qiwi, PayPal и другие.</li>
+                        </ul>
+                    <p class="lg:text-lg md:text-base text-sm">
+                        Поставка техники и/или ее комплектующих производится при 100% предоплате или индивидуальными условиями оплаты.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div
+            class="hidden opacity-0 transition-opacity duration-150 ease-linear data-[te-tab-active]:block md:mt-[116px] mt-16"
+            id="photo"
+            role="tabpanel"
+            aria-labelledby="photo">
+            <div>
+                <div thumbsslider class="swiper swiperPhoto">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide w-full home"><img src="Assets/Images/pageCard/tabs/photo.png" alt="" class="w-full object-cover"></div>
+                      <div class="swiper-slide w-full home"><img src="Assets/Images/pageCard/tabs/photo.png" alt="" class="w-full object-cover"></div>
+                      <div class="swiper-slide w-full home"><img src="Assets/Images/pageCard/tabs/photo.png" alt="" class="w-full object-cover"></div>
+                      <div class="swiper-slide w-full home"><img src="Assets/Images/pageCard/tabs/photo.png" alt="" class="w-full object-cover"></div>
+                    </div>
+                </div>
+                <div class="swiper swiperHome z-40 hidden fixed w-full xl:w-10/12 left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2">
+                    <button class="right-4 top-4 fixed z-50 text-red-500" id="closeHome"><img src="Assets/Images/icon/sliderClose.svg" alt=""></button>
+                    <div class="relative swiper-wrapper">
+                        
+                      <div class="swiper-slide w-full"><img src="Assets/Images/pageCard/tabs/photo.png" alt="" class="w-full h-full "> </div>
+                      <div class="swiper-slide w-full"><img src="Assets/Images/pageCard/tabs/photo.png" alt="" class="w-full h-full "></div>
+                      <div class="swiper-slide w-full"><img src="Assets/Images/pageCard/tabs/photo.png" alt="" class="w-full h-full "></div>
+                      <div class="swiper-slide w-full"><img src="Assets/Images/pageCard/tabs/photo.png" alt="" class="w-full h-full "></div>
+                      
+                    </div>
+                        <div class="swiper-button-prev flex items-center justify-center w-12 h-12"><img src="Assets/Images/icon/sliderPrev.svg" alt=""></div>
+                        <div class="swiper-button-next flex items-center justify-center w-12 h-12"><img src="Assets/Images/icon/sliderNext.svg" alt=""></div>
+                </div>
+                <div class="w-full h-screen fixed top-0 left-0 hidden z-10 bg-gray-900 opacity-70" id="overlayHome"></div>
+            </div>
+        </div>
+        <div
+            class="hidden opacity-0 transition-opacity duration-150 ease-linear data-[te-tab-active]:block md:mt-[116px] mt-16"
+            id="video"
+            role="tabpanel"
+            aria-labelledby="video">
+            <div>
+                <div class="swiper swiperVideo">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide w-full"><iframe class="w-full aspect-video" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe></div>
+                        <div class="swiper-slide w-full"><iframe class="w-full aspect-video" src="https://www.youtube.com/embed/3jT_q7dt-cM" frameborder="0" allowfullscreen></iframe></div>
+                        <div class="swiper-slide w-full"><iframe class="w-full aspect-video" src="https://www.youtube.com/embed/3jT_q7dt-cM" frameborder="0" allowfullscreen></iframe></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Форма -->
+    <div class="xl:px-[calc((100%-1180px)/2)] min-[1180px]:px-[calc((100%-1100px)/2)] md:px-10 mx-auto">
+        <div class="flex flex-col bg-[#1F232E] lg:p-[60px] md:p-5 py-10 rounded-2xl px-4">
+            <p class="text-2xl text-white font-bold mb-3 hidden md:flex">Получите коммерческое предложение в течении 15 минут!</p>
+            <div class="flex md:flex-row flex-col md:justify-between items-center lg:gap-[100px] md:gap-7">
+                <div class="flex flex-col md:md:w-[45%] w-full order-2 md:order-1">
+                    <p class="text-2xl text-white font-bold mb-3 flex md:hidden">Получите коммерческое предложение в течении 15 минут!</p>
+                    <p class="text-white mb-6">Заполните форму и отправьте заявку</p>
+                    <form action="#" class="flex flex-col gap-4">
+                        <label class="text-[#BEBEBE]">Ваше имя
+                            <input class="px-4 py-3 text-[#818181] bg-white rounded-[10px] w-full outline-0" type="text" name="name" placeholder="Имя">
+                        </label>
+                        <label class="text-[#BEBEBE]">Ваш номер телефона
+                            <input class="px-4 py-3 text-[#818181] bg-white rounded-[10px] w-full outline-0" type="text" name="phone" placeholder="+7">
+                        </label>
+                        <label class="text-[#BEBEBE]">Ваш Email
+                            <input class="px-4 py-3 text-[#818181] bg-white rounded-[10px] w-full outline-0" type="text" name="email" placeholder="mail">
+                        </label>
+                        <button class="w-full h-12 bg-[#FF4616] rounded-[10px] text-white font-bold text-sm uppercase" type="submit">
+                            Получить коммерческое<br> предложение
+                        </button>
+                    </form>
+                </div>
+                <div class="flex justify-center md:w-[55%] w-full order-1 md:order-2 mb-7 md:mb-0">
+                    <img src="Assets/Images/pageCard/form/traktor.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Карточки трактора -->
+    <div class="container mx-auto xl:my-[120px] lg:my-[100px] my-20">
+        <div class="flex flex-col gap-6 my-[120px]">
+            <h2 class="text-[#FF4616] font-bold md:text-[40px] text-[30px] mb-4">ТРАКТОРЫ АГРОМАШ</h2>
+            <div class="flex lg:flex-row flex-col items-center justify-between xl:p-10 lg:p-[30px] p-5 gap-4 bg-[#F2F2F2] rounded-3xl">
+                <picture class="lg:w-1/3 flex md:w-1/2">
+                    <source srcset="Assets/Images/w375/tractor-w375.png" media="(max-width:375px)">
+                    <img src="Assets/Images/card/90tg.png" alt="tractor_90tg" class="object-cover w-full">
+                </picture>
+                <div class="flex flex-col justify-between gap-14 md:gap-5 lg:w-2/3">
+                    <div class="flex flex-col gap-4">
+                        <span class="text-2xl font-bold">Трактор АГРОМАШ-90ТГ</span>
+                        <p class="md:text-lg text-sm">Гусеничный сельскохозяйственный трактор общего назначения, тягового класса 3, предназначен для выполнения комплекса сельскохозяйственных работ в агрегате с навесными, полунавесными и прицепными гидрофицированными и негидрофицированными машинами и орудиями</p>
+                    </div>
+                    <div class="flex md:flex-row flex-col justify-between gap-5 items-center">
+                        <button class="max-h-14 py-5 grow w-full flex justify-center basis-0 items-center rounded-xl bg-[#FF4616] text-white border-2 border-[#FF4616] hover:bg-transparent hover:text-[#FF4616] transition-all duration-500 delay-100 text-sm uppercase font-bold">Узнать стоимость</button>
+                        <button class="max-h-14 py-5 grow w-full flex justify-center basis-0 items-center rounded-xl bg-white border-2 border-solid border-[#FF4616] text-[#FF4616] hover:bg-[#FF4616] hover:text-white transition-all duration-500 delay-100 text-sm uppercase font-bold">ПОДРОБНЕЕ</button>
+                    </div>
+                </div>
+            </div>
+            <div class="flex lg:flex-row flex-col items-center justify-between xl:p-10 lg:p-[30px] p-5 gap-4 bg-[#F2F2F2] rounded-3xl">
+                <picture class="lg:w-1/3 flex md:w-1/2">
+                    <source srcset="Assets/Images/w375/tractor-w375.png" media="(max-width:375px)">
+                    <img src="Assets/Images/card/90tk.png" alt="tractor_90tk" class="object-cover w-full">
+                </picture>
+                <div class="flex flex-col justify-between gap-14 md:gap-5 lg:w-2/3">
+                    <div class="flex flex-col gap-4">
+                        <span class="text-2xl font-bold">Трактор АГРОМАШ-90ТГ</span>
+                        <p class="md:text-lg text-sm">Гусеничный сельскохозяйственный трактор общего назначения, тягового класса 3, предназначен для выполнения комплекса сельскохозяйственных работ в агрегате с навесными, полунавесными и прицепными гидрофицированными и негидрофицированными машинами и орудиями</p>
+                    </div>
+                    <div class="flex md:flex-row flex-col justify-between gap-5 items-center">
+                        <button class="max-h-14 py-5 grow w-full flex justify-center basis-0 items-center rounded-xl bg-[#FF4616] text-white border-2 border-[#FF4616] hover:bg-transparent hover:text-[#FF4616] transition-all duration-500 delay-100 text-sm uppercase font-bold">Узнать стоимость</button>
+                        <button class="max-h-14 py-5 grow w-full flex justify-center basis-0 items-center rounded-xl bg-white border-2 border-solid border-[#FF4616] text-[#FF4616] hover:bg-[#FF4616] hover:text-white transition-all duration-500 delay-100 text-sm uppercase font-bold">ПОДРОБНЕЕ</button>
+                    </div>
+                </div>
+            </div>
+            <div class="flex lg:flex-row flex-col items-center justify-between xl:p-10 lg:p-[30px] p-5 gap-4 bg-[#F2F2F2] rounded-3xl">
+                <picture class="lg:w-1/3 flex md:w-1/2">
+                    <source srcset="Assets/Images/w375/tractor-w375.png" media="(max-width:375px)">
+                    <img src="Assets/Images/card/90tk.png" alt="tractor_75tkc" class="object-cover w-full">
+                </picture>
+                <div class="flex flex-col justify-between gap-14 md:gap-5 lg:w-2/3">
+                    <div class="flex flex-col gap-4">
+                        <span class="text-2xl font-bold">Трактор АГРОМАШ-90ТГ</span>
+                        <p class="md:text-lg text-sm">Гусеничный сельскохозяйственный трактор общего назначения, тягового класса 3, предназначен для выполнения комплекса сельскохозяйственных работ в агрегате с навесными, полунавесными и прицепными гидрофицированными и негидрофицированными машинами и орудиями</p>
+                    </div>
+                    <div class="flex md:flex-row flex-col justify-between gap-5 items-center">
+                        <button class="max-h-14 py-5 grow w-full flex justify-center basis-0 items-center rounded-xl bg-[#FF4616] text-white border-2 border-[#FF4616] hover:bg-transparent hover:text-[#FF4616] transition-all duration-500 delay-100 text-sm uppercase font-bold">Узнать стоимость</button>
+                        <button class="max-h-14 py-5 grow w-full flex justify-center basis-0 items-center rounded-xl bg-white border-2 border-solid border-[#FF4616] text-[#FF4616] hover:bg-[#FF4616] hover:text-white transition-all duration-500 delay-100 text-sm uppercase font-bold">ПОДРОБНЕЕ</button>
+                    </div>
+                </div>
+            </div>
+            <div class="flex lg:flex-row flex-col items-center justify-between xl:p-10 lg:p-[30px] p-5 gap-4 bg-[#F2F2F2] rounded-3xl">
+                <picture class="lg:w-1/3 flex md:w-1/2">
+                    <source srcset="Assets/Images/w375/tractor-w375.png" media="(max-width:375px)">
+                    <img src="Assets/Images/card/90tkc.png" alt="tractor_90tkc" class="object-cover w-full">
+                </picture>
+                <div class="flex flex-col justify-between gap-14 md:gap-5 lg:w-2/3">
+                    <div class="flex flex-col gap-4">
+                        <span class="text-2xl font-bold">Трактор АГРОМАШ-90ТГ</span>
+                        <p class="md:text-lg text-sm">Гусеничный сельскохозяйственный трактор общего назначения, тягового класса 3, предназначен для выполнения комплекса сельскохозяйственных работ в агрегате с навесными, полунавесными и прицепными гидрофицированными и негидрофицированными машинами и орудиями</p>
+                    </div>
+                    <div class="flex md:flex-row flex-col justify-between gap-5 items-center">
+                        <button class="max-h-14 py-5 grow w-full flex justify-center basis-0 items-center rounded-xl bg-[#FF4616] text-white border-2 border-[#FF4616] hover:bg-transparent hover:text-[#FF4616] transition-all duration-500 delay-100 text-sm uppercase font-bold">Узнать стоимость</button>
+                        <button class="max-h-14 py-5 grow w-full flex justify-center basis-0 items-center rounded-xl bg-white border-2 border-solid border-[#FF4616] text-[#FF4616] hover:bg-[#FF4616] hover:text-white transition-all duration-500 delay-100 text-sm uppercase font-bold">ПОДРОБНЕЕ</button>
+                    </div>
+                </div>
+            </div>
+            <div class="flex lg:flex-row flex-col items-center justify-between xl:p-10 lg:p-[30px] p-5 gap-4 bg-[#F2F2F2] rounded-3xl">
+                <picture class="lg:w-1/3 flex md:w-1/2">
+                    <source srcset="Assets/Images/w375/tractor-w375.png" media="(max-width:375px)">
+                    <img src="Assets/Images/card/90tkc.png" alt="tractor_75tkc" class="object-cover w-full">
+                </picture>
+                <div class="flex flex-col justify-between gap-14 md:gap-5 lg:w-2/3">
+                    <div class="flex flex-col gap-4">
+                        <span class="text-2xl font-bold">Трактор АГРОМАШ-90ТГ</span>
+                        <p class="md:text-lg text-sm">Гусеничный сельскохозяйственный трактор общего назначения, тягового класса 3, предназначен для выполнения комплекса сельскохозяйственных работ в агрегате с навесными, полунавесными и прицепными гидрофицированными и негидрофицированными машинами и орудиями</p>
+                    </div>
+                    <div class="flex md:flex-row flex-col justify-between gap-5 items-center">
+                        <button class="max-h-14 py-5 grow w-full flex justify-center basis-0 items-center rounded-xl bg-[#FF4616] text-white border-2 border-[#FF4616] hover:bg-transparent hover:text-[#FF4616] transition-all duration-500 delay-100 text-sm uppercase font-bold">Узнать стоимость</button>
+                        <button class="max-h-14 py-5 grow w-full flex justify-center basis-0 items-center rounded-xl bg-white border-2 border-solid border-[#FF4616] text-[#FF4616] hover:bg-[#FF4616] hover:text-white transition-all duration-500 delay-100 text-sm uppercase font-bold">ПОДРОБНЕЕ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Карта -->
+    <div class="flex lg:flex-row flex-col items-center relative xl:my-[120px] lg:my-[100px] my-20 w-full gap-10 xl:gap-0">
+        <div class="lg:absolute container pointer-events-none mx-auto h-full lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2">
+            <div class="lg:relative w-full h-full">
+                <div class="pointer-events-auto flex flex-col bg-white lg:p-9 p-0 lg:absolute lg:top-1/2 lg:-translate-y-1/2">
+                    <h3 class="md:text-[40px] text-[30px] font-bold">Контакты</h3>
+                    <p class="font-semibold md:text-2xl text-xl my-5">ООО «ЦЕНТР ТРАКТОРНОЙ ТЕХНИКИ»</p>
+                    <div class="grid lg:grid-cols-1 md:grid-cols-2 grid-cols-1 md:gap-5">
+                        <div class="flex flex-col">
+                            <p class="font-semibold md:text-2xl text-xl flex flex-row items-center justify-start md:gap-3 gap-1 before:bg-[url(Assets/Images/icon/point.svg)] before:bg-no-repeat before:w-[37px] before:h-[37px] before:mt-1 before:shrink-0">Юридический адрес</p>
+                            <p class="md:ml-[49px] ml-[41px] md:text-base text-sm">428034, Россия, Чувашская<br>
+                                Республика, г. Чебоксары, Московский проспект<br>
+                                дом 52 литера А, оф. 204</p>
+                        </div>
+                        <div class="flex flex-col">
+                            <p class="font-semibold md:text-2xl text-xl flex flex-row items-center justify-start md:gap-3 gap-1 before:bg-[url(Assets/Images/icon/phone.svg)] before:bg-no-repeat before:w-[37px] before:h-[37px] before:mt-1 before:shrink-0">Телефон отдела продаж</p>
+                            <p class="md:ml-[49px] ml-[41px] md:text-base text-sm">+7 (903) 064-35-35<br>
+                            +7 (903) 064-33-88
+                            </p>
+                        </div>
+                        <div class="flex flex-col">
+                            <p class="font-semibold md:text-2xl text-xl flex flex-row items-center justify-start md:gap-3 gap-1 before:bg-[url(Assets/Images/icon/phone.svg)] before:bg-no-repeat before:w-[37px] before:h-[37px] before:mt-1 before:shrink-0">Бесплатный звонок по России</p>
+                            <a href="tel:+78006000908" class="md:ml-[49px] ml-[41px] fomt-semibold md:text-2xl text-xl text-[#FF4616]">8-800-600-09-08</a>
+                        </div>
+                        <div class="flex flex-col">
+                            <p class="font-semibold md:text-2xl text-xl flex flex-row items-center justify-start md:gap-3 gap-1 before:bg-[url(Assets/Images/icon/mail.svg)] before:bg-no-repeat before:w-[37px] before:h-[37px] before:mt-1 before:shrink-0">e-mail:</p>
+                            <a href="mailto:agromash-21@yandex.ru" class="md:ml-[49px] ml-[41px] fomt-semibold md:text-2xl text-xl text-[#FF4616]">agromash-21@yandex.ru</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <iframe class="w-full h-[652px]" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d21151.08062227304!2d47.23729167484453!3d56.13577503589627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1677846956484!5m2!1sru!2sru" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    
+    <!-- Подвал -->
+    <footer class="bg-[#1F232E] w-full xl:mt-[120px] lg:mt-[100px] mt-20">
+        <div class="container mx-auto grid lg:grid-cols-[repeat(5,auto)] md:grid-cols-[repeat(3,auto)] grid-cols-[repeat(2,auto)] items-start justify-center py-10 gap-x-12 md:gap-x-14 gap-y-5 md:gap-y-9 lg:gap-y-0">
+            <div class="md:col-span-3 lg:col-span-1 col-span-2">
+                <img src="Assets/Images/icon/Logo.svg" alt="" class="w-40 xl:w-64">
+            </div>
+            <div class="lg:hidden xl:flex">
+                <ul class="flex flex-col gap-5 items-start justify-between text-white">
+                    <li><a href="#">АГРОМАШ 90ТГ</a></li>
+                    <li><a href="#">АГРОМАШ 90ТК</a></li>
+                    <li><a href="#">АГРОМАШ 75ТК</a></li>
+                    <li><a href="#">АГРОМАШ 90ТКС</a></li>
+                    <li><a href="#">АГРОМАШ 75ТКС</a></li>
+                </ul>
+            </div>
+            <div class="text-white flex flex-col items-start justify-start gap-3">
+                <div class="flex flex-col gap-1 items-start justify-between">
+                    <span class="text-[#949494] text-sm">Бесплатный звонок по России</span>
+                    <a href="tel:+78006000908" class="md:text-base text-sm flex flex-row items-center justify-start gap-3 before:bg-[url(Assets/Images/icon/telefon.svg)] before:w-6 before:h-6 before:shrink-0">8-800-600-09-08</a>
+                </div>
+                <div class="flex flex-col gap-1 items-start justify-between">
+                    <span class="text-[#949494] text-sm">Отдел продаж</span>
+                    <a href="tel:+79030643535" class="md:text-base text-sm flex flex-row items-center justify-start gap-3 before:bg-[url(Assets/Images/icon/telefon.svg)] before:w-6 before:h-6 before:shrink-0">+7 (903) 064-35-35</a>
+                    <a href="tel:+79030643388" class="md:text-base text-sm flex flex-row items-center justify-start gap-3 before:bg-[url(Assets/Images/icon/telefon.svg)] before:w-6 before:h-6 before:shrink-0">+7 (903) 064-33-88</a>
+                </div>
+            </div>
+            <div class="md:col-span-1 col-span-2">
+                <span class="text-[#949494] text-sm">Электронная почта</span>
+                <a href="mailto:agromash-21@yandex.ru" class="md:text-base text-sm text-white flex flex-row items-center justify-start gap-3 before:bg-[url(Assets/Images/icon/email.svg)] before:w-6 before:h-6 before:shrink-0">agromash-21@yandex.ru</a>
+            </div>
+            <div class="md:col-span-3 lg:col-span-1 col-span-2 flex md:justify-center lg:justify-start">
+                <button class="lg:py-4 lg:px-5 md:py-5 md:px-28 py-4 md:w-fit w-full flex justify-center items-center rounded-xl bg-[#FF4616] text-white text-sm uppercase font-bold">СВЯЗАТЬСЯ С НАМИ</button>
+            </div>
+        </div>
+    </footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script src="Assets/JS/sliderCard.js"></script>
+<script src="Assets/JS/custom.js"></script>
+<script src="Assets/JS/tail.js"></script>
+</body>
+</html>
